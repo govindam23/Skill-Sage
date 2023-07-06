@@ -1,16 +1,10 @@
-import { View, Text } from 'react-native'
-import React, { useContext, useEffect, useState } from 'react'
-import { TouchableOpacity } from 'react-native'
 import { Ionicons } from '@expo/vector-icons';
 import { useNavigation, useRoute } from '@react-navigation/native';
-import { FlatList } from 'react-native';
-import { Dimensions } from 'react-native';
-import Colors from '../Shared/Colors';
-import { Button } from 'react-native';
+import React, { useContext, useEffect, useState } from 'react';
+import { Dimensions, FlatList, Text, TouchableOpacity, View } from 'react-native';
 import ProgressBar from '../Components/ProgressBar';
-import Services from '../Shared/Services';
-import GlobalApi from '../Shared/GlobalApi';
 import { AuthContext } from '../Context/AuthContext';
+import Colors from '../Shared/Colors';
 
 
 export default function CourseChapter() {
@@ -45,13 +39,13 @@ export default function CourseChapter() {
                 }
             }
 
-            GlobalApi.setCourseProgress(data).then(resp=>{
-                navigation.navigate({
-                  name:'course-detail' ,
-                  params:{courseContentId:param.courseContent.id},
-                  merge:true 
-                })
-            })
+            // GlobalApi.setCourseProgress(data).then(resp=>{
+            //     navigation.navigate({
+            //       name:'course-detail' ,
+            //       params:{courseContentId:param.courseContent.id},
+            //       merge:true 
+            //     })
+            // })
            
        
         }

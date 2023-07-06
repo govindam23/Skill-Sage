@@ -5,7 +5,6 @@ import { Image, Text, TouchableOpacity, View } from 'react-native';
 import CourseContent from '../Components/CourseContent';
 import { AuthContext } from '../Context/AuthContext';
 import Colors from '../Shared/Colors';
-import GlobalApi from '../Shared/GlobalApi';
 export default function CourseDetails() {
     const param=useRoute().params;
     const [course,setCourse]=useState([])
@@ -18,21 +17,21 @@ export default function CourseDetails() {
         param.courseData.id?getCourseProgress():null;
     },[param.courseContentId])
 
-    const getCourseProgress=()=>{
-      GlobalApi.getCourseProgress(userData.id,param?.courseData.id)
-      .then(resp=>{
-        if(resp.data.data)
-        {
-          const result=resp.data.data.map(item=>({
-            id:item.id,
-            "courseId": item.attributes.courseId,
-            "courseContentId":item.attributes.courseContentId,
-          }))
+    // const getCourseProgress=()=>{
+    //   GlobalApi.getCourseProgress(userData.id,param?.courseData.id)
+    //   .then(resp=>{
+    //     if(resp.data.data)
+    //     {
+    //       const result=resp.data.data.map(item=>({
+    //         id:item.id,
+    //         "courseId": item.attributes.courseId,
+    //         "courseContentId":item.attributes.courseContentId,
+    //       }))
 
-          setUserProgress(result);
-        }
-      })
-    }
+    //       setUserProgress(result);
+    //     }
+    //   })
+    // }
    
 
  
