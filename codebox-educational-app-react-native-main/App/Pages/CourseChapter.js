@@ -39,13 +39,13 @@ export default function CourseChapter() {
                 }
             }
 
-            // GlobalApi.setCourseProgress(data).then(resp=>{
-            //     navigation.navigate({
-            //       name:'course-detail' ,
-            //       params:{courseContentId:param.courseContent.id},
-            //       merge:true 
-            //     })
-            // })
+            GlobalApi.setCourseProgress(data).then(resp=>{
+                navigation.navigate({
+                  name:'course-detail' ,
+                  params:{courseContentId:param.courseContent.id},
+                  merge:true 
+                })
+            })
            
        
         }
