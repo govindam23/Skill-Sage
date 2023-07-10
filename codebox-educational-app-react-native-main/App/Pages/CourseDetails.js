@@ -5,6 +5,7 @@ import { Image, Text, TouchableOpacity, View } from 'react-native';
 import CourseContent from '../Components/CourseContent';
 import { AuthContext } from '../Context/AuthContext';
 import Colors from '../Shared/Colors';
+import GlobalApi from '../Shared/GlobalApi';
 export default function CourseDetails() {
     const param=useRoute().params;
     const [course,setCourse]=useState([])
