@@ -23,7 +23,7 @@
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
       },
-      "package": "com.tubeguruji.codebox",
+      "package": "com.rajdeep.skillsage",
       "versionCode": 1
     },
     "web": {
@@ -31,8 +31,9 @@
     },
     "extra": {
       "eas": {
-        "projectId": "8df0d0df-8767-4c24-bbbf-1f99357ce6eb"
+        "projectId": "88622b05-042c-4ac0-b322-6d43af32e75f"
       }
-    }
+    },
+    "owner": "rajdeeptoor"
   }
 }
