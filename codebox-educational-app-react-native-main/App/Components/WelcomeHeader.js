@@ -1,5 +1,5 @@
-import { View, Text, Image, StyleSheet } from 'react-native'
 import React, { useContext } from 'react'
+import { Image, StyleSheet, Text, View } from 'react-native'
 import { AuthContext } from '../Context/AuthContext'
 
 export default function WelcomeHeader() {
@@ -13,6 +13,7 @@ export default function WelcomeHeader() {
         <Image source={{uri:userData?.picture}}
         style={{width:40,height:40,borderRadius:100}}
         />
+      
     
     </View>
   )

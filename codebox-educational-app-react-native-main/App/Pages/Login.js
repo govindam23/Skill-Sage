@@ -41,7 +41,7 @@ export default function Login() {
             setUserData(user);
             await Services.setUserAuth(user);
           } catch (error) {
-            // Add your own error handler here
+            console.log("invalid data")
           }
       }
   return (
