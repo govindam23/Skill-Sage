@@ -27,7 +27,7 @@ const ChatBox = () => {
           onChangeText={text => setInputText(text)}
           value={inputText}
         />
-        <Button title="Send" onPress={handleSendMessage} />
+        <Button title="Send Message" onPress={handleSendMessage} />
       </View>
     </View>
   );
