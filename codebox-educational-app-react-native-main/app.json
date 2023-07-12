@@ -1,6 +1,6 @@
 {
   "expo": {
-    "name": "education-app",
+    "name": "skillsage",
     "slug": "codebox",
     "version": "1.0.0",
     "scheme": "codebox",
@@ -23,7 +23,7 @@
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
       },
-      "package": "com.rajdeep.skillsage",
+      "package": "com.binwant.skillsage",
       "versionCode": 1
     },
     "web": {
