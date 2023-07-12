@@ -25,6 +25,7 @@ export default function App() {
   },[]) 
   return (
     <View style={styles.container}>
+      <Text>Loading message</Text>
       <AuthContext.Provider 
       value={{userData,setUserData}}>
       {userData?

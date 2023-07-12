@@ -57,9 +57,9 @@ export default function Login() {
                 <Text style={{color:Colors.white}}>Sign In with Google</Text>
             </TouchableOpacity>
             <TouchableOpacity onPress={()=>setUserData({
-              name:'Rajdeep Toor',
+              name:'Hustler',
               picture:'https://cdn3d.iconscout.com/3d/premium/thumb/male-customer-call-service-portrait-6760890-5600697.png?f=webp',
-              email:'rajdeep@gmail.com',
+              email:'user@gmail.com',
               id:1
            })}>
             <Text>Skip</Text>
