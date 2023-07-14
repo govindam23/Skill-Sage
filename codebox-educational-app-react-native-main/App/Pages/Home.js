@@ -13,7 +13,7 @@ import { AuthContext } from '../Context/AuthContext';
 
 export default function Home() {
     const {userData,setUserData}=useContext(AuthContext)
-   
+     
   return (
     <ScrollView style={{padding:20}}>
         <WelcomeHeader/>
