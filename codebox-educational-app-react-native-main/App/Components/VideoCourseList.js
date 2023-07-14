@@ -1,11 +1,7 @@
-import { View, Text } from 'react-native'
-import React, { useEffect, useState } from 'react'
-import GlobalApi from '../Shared/GlobalApi'
-import { FlatList } from 'react-native';
-import { Image } from 'react-native';
-import { TurboModuleRegistry } from 'react-native';
-import { TouchableOpacity } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
+import React, { useEffect, useState } from 'react';
+import { FlatList, Image, Text, TouchableOpacity, View } from 'react-native';
+import GlobalApi from '../Shared/GlobalApi';
 
 export default function VideoCourseList() {
 
