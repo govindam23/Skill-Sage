@@ -1,11 +1,8 @@
-import { View, Text } from 'react-native'
-import React, { useEffect, useState } from 'react'
-import GlobalApi from '../Shared/GlobalApi'
-import { FlatList } from 'react-native';
-import { Image } from 'react-native';
-import Colors from '../Shared/Colors';
-import { TouchableOpacity } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
+import React, { useEffect, useState } from 'react';
+import { FlatList, Image, Text, TouchableOpacity, View } from 'react-native';
+import Colors from '../Shared/Colors';
+import GlobalApi from '../Shared/GlobalApi';
 
 export default function CourseList({type}) { 
     const [courseList,setCourseList]=useState([])
@@ -55,7 +52,7 @@ export default function CourseList({type}) {
             <View style={{padding:10}}>
             <Text style={{fontWeight:'bold',fontSize:15}}>{item.name}</Text>
             <Text style={{color:Colors.gray,fontWeight:'300'}}>{item.Topic?.length} Lessons</Text>
-
+             
             </View>
            
         </TouchableOpacity> 
