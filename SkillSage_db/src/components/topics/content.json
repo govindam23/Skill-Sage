@@ -1,16 +1,21 @@
 {
   "collectionName": "components_topics_contents",
   "info": {
-    "displayName": "Content",
-    "description": ""
+    "displayName": "Content"
   },
   "options": {},
   "attributes": {
-    "Content": {
+    "name": {
       "type": "string"
     },
-    "Topics": {
-      "type": "string"
+    "description": {
+      "type": "richtext"
+    },
+    "input": {
+      "type": "richtext"
+    },
+    "output": {
+      "type": "richtext"
     }
   }
 }

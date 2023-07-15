@@ -1,10 +1,10 @@
 {
   "kind": "collectionType",
-  "collectionName": "video_courses",
+  "collectionName": "course_lists",
   "info": {
-    "singularName": "video-course",
-    "pluralName": "video-courses",
-    "displayName": "VideoCourse",
+    "singularName": "course-list",
+    "pluralName": "course-lists",
+    "displayName": "CourseList",
     "description": ""
   },
   "options": {
@@ -12,14 +12,11 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "title": {
+    "name": {
       "type": "string"
     },
     "description": {
       "type": "richtext"
-    },
-    "videoUrl": {
-      "type": "string"
     },
     "image": {
       "type": "media",
@@ -32,10 +29,19 @@
         "audios"
       ]
     },
-    "VideoTopic": {
+    "Topic": {
       "type": "component",
       "repeatable": true,
-      "component": "video-topics.video-topics"
+      "component": "topics.topics"
+    },
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "basic",
+        "moderate",
+        "advance",
+        "project"
+      ]
     }
   }
 }

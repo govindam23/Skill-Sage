@@ -24,7 +24,7 @@ export default function Home() {
         <CourseList type={'advance'} />
         
       
-        <View style={{height:100}}> 
+        <View style={{height:110}}> 
        
         </View>
     </ScrollView> 
