@@ -10,6 +10,8 @@ export default function Slider() {
   
       const getSlider=async()=>{
         const result=(await GlobalApi.getSlider()).data;
+        
+        
        
         const resp=result.data.map((item)=>({
             id:item.id,
