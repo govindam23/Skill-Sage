@@ -34,7 +34,7 @@ export default function VideoCourseList() {
     }
   return (
     <View style={{marginTop:15}}>
-        <Text style={{fontSize:20,fontWeight:'bold',marginBottom:3}}>Video Course</Text>
+        <Text style={{fontSize:20,fontWeight:'bold',marginBottom:4}}>Video Course</Text>
      <FlatList
      data={videoList}
      horizontal={true}
