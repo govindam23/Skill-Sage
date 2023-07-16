@@ -10,7 +10,7 @@ const screens = {
   SkillSage: {
     screen: Welcome,
   },
-  Login: {
+  LogIn: {
     screen: Login,
   },
   SignIn: {

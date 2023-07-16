@@ -1,7 +1,7 @@
-import { Image, StyleSheet, Text, View, TextInput, Button } from 'react-native'
+import { Image, StyleSheet, Text, View, TouchableOpacity } from 'react-native'
 
 export default function Welcome({ navigation }) {
-  const pressHandler = () => navigation.navigate('Home')
+  const handleLogin = () => navigation.navigate('LogIn')
   const handleSignin = () => navigation.navigate('SignIn')
 
   return (
@@ -10,6 +10,22 @@ export default function Welcome({ navigation }) {
       <View>
         <Text style={styles.headText}>Welcome to Skill Sage!!</Text>
         <Text style={styles.text}>Find your perfect mentor within clicks</Text>
+      </View>
+      <View style={styles.body}>
+        <View style={styles.btn}>
+          <TouchableOpacity>
+            <Text style={styles.btntext} onPress={handleLogin}>
+              Login
+            </Text>
+          </TouchableOpacity>
+        </View>
+        <View style={styles.btn}>
+          <TouchableOpacity>
+            <Text style={styles.btntext} onPress={handleSignin}>
+              Sign Up
+            </Text>
+          </TouchableOpacity>
+        </View>
       </View>
     </View>
   )
@@ -41,21 +57,23 @@ const styles = StyleSheet.create({
     color: '#006E7F',
     fontWeight: 300,
   },
-  text1: {
-    marginLeft: 'auto',
-    color: '#006E7F',
-    fontWeight: 300,
-    textDecorationLine: 'underline',
-  },
-  input: {
-    marginVertical: 10,
-    padding: 10,
-    borderColor: '#ccc',
-    borderWidth: 1,
+  body: {
+    marginTop: 75,
+    marginBottom: 75,
   },
   btn: {
-    marginTop: 40,
-    marginBottom: 20,
-    // padding: 10,
+    backgroundColor: '#FFC700',
+    padding: 10,
+    borderRadius: 8,
+    marginHorizontal: 20,
+    marginBottom: 40,
+  },
+  btntext: {
+    justifyContent: 'center',
+    maxWidth: 300,
+    alignSelf: 'center',
+    color: '#006E7F',
+    fontWeight: 500,
+    fontSize: 16,
   },
 })

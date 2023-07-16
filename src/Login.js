@@ -78,6 +78,5 @@ const styles = StyleSheet.create({
   btn: {
     marginTop: 40,
     marginBottom: 20,
-    // padding: 10,
   },
 })
