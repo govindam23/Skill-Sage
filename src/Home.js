@@ -1,8 +1,9 @@
 import { Image, StyleSheet, Text, View, ScrollView } from 'react-native'
 
-export default function Home() {
+export default function Home({ navigation }) {
+  const pressHandler = () => navigation.navigate('Mentor')
   return (
-    <ScrollView>
+    <ScrollView style={styles.container}>
       <View style={styles.innercontainer}>
         <View>
           <Text style={styles.headText}>Dashboard</Text>
@@ -20,7 +21,9 @@ export default function Home() {
           />
         </View>
         <View>
-          <Text style={styles.text1}>Check out your mentors</Text>
+          <Text style={styles.text1} onPress={pressHandler}>
+            Check out your mentors
+          </Text>
         </View>
         <View>
           <Image
@@ -34,6 +37,9 @@ export default function Home() {
 }
 
 const styles = StyleSheet.create({
+  container: {
+    backgroundColor: '#fff',
+  },
   innercontainer: {
     marginHorizontal: 20,
     backgroundColor: '#fff',
@@ -46,7 +52,7 @@ const styles = StyleSheet.create({
   },
   headText: {
     marginRight: 'auto',
-    marginTop: 100,
+    marginTop: 10,
     marginBottom: 20,
     color: '#006E7F',
     fontSize: 22,

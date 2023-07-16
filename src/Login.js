@@ -1,9 +1,9 @@
 import { Image, StyleSheet, Text, View, TextInput, Button } from 'react-native'
-import ForgotPassword from './ForgotPassword'
 
-export default function Login() {
-  const goToForgotPassword = () =>
-    this.props.navigation.navigate('ForgotPassword')
+export default function Login({ navigation }) {
+  const pressHandler = () => navigation.navigate('Home')
+  const handleSignin = () => navigation.navigate('SignIn')
+
   return (
     <View style={styles.container}>
       <Image source={require('../assets/Login.png')} style={styles.img} />
@@ -18,16 +18,17 @@ export default function Login() {
           <TextInput placeholder='Password' secureTextEntry={true} />
         </View>
         <View>
-          <Text style={styles.text1} onPress={goToForgotPassword}>
-            Forget Password?
-          </Text>
+          <Text style={styles.text1}>Forget Password?</Text>
         </View>
         <View style={styles.btn}>
-          <Button title='Login' color={'#ffc700'} />
+          <Button title='Login' color={'#ffc700'} onPress={pressHandler} />
         </View>
         <View>
           <Text style={styles.text}>
-            Don't have an account? <Text style={styles.text1}>Sign In</Text>
+            Don't have an account?{' '}
+            <Text style={styles.text1} onPress={handleSignin}>
+              Sign In
+            </Text>
           </Text>
         </View>
       </View>
@@ -43,13 +44,13 @@ const styles = StyleSheet.create({
     marginHorizontal: 20,
   },
   img: {
-    marginTop: 0,
+    marginTop: -10,
     paddingTop: 0,
   },
   headText: {
     marginLeft: 'auto',
     marginRight: 'auto',
-    marginTop: 50,
+    marginTop: 20,
     marginBottom: 50,
     color: '#006E7F',
     fontSize: 24,
@@ -58,6 +59,7 @@ const styles = StyleSheet.create({
   text: {
     marginLeft: 'auto',
     marginRight: 'auto',
+    marginBottom: 30,
     color: '#006E7F',
     fontWeight: 300,
   },

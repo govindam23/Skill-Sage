@@ -10,7 +10,7 @@ import React from 'react'
 
 export default Mentor = () => {
   return (
-    <ScrollView>
+    <ScrollView style={styles.container}>
       <View style={styles.innercontainer}>
         <View>
           <Text style={styles.headText}>Connect with Mentors</Text>
@@ -129,9 +129,11 @@ export default Mentor = () => {
 }
 
 const styles = StyleSheet.create({
+  container: {
+    backgroundColor: '#fff',
+  },
   innercontainer: {
     marginHorizontal: 20,
-    backgroundColor: '#fff',
   },
   mentorbox: {
     backgroundColor: '#FFF1BF',
@@ -158,7 +160,7 @@ const styles = StyleSheet.create({
   headText: {
     marginRight: 'auto',
     marginLeft: 'auto',
-    marginTop: 60,
+    marginTop: 20,
     marginBottom: 20,
     color: '#006E7F',
     fontSize: 22,
