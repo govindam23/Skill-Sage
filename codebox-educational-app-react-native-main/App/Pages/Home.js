@@ -16,6 +16,7 @@ export default function Home() {
      
   return (
     <ScrollView style={{padding:20}}>
+      <View style ={{fontFamily:''}}>
         <WelcomeHeader/>
         <SearchBar/>
         <Slider/>
@@ -25,7 +26,7 @@ export default function Home() {
         
       
         <View style={{height:110}}> 
-       
+        </View>
         </View>
     </ScrollView> 
     
