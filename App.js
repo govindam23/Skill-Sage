@@ -7,9 +7,9 @@ import Mentor from './src/Mentor.js'
 export default function App() {
   return (
     <View>
-      <Login />
+      {/* <Login /> */}
       {/* <Home /> */}
-      {/* <Mentor /> */}
+      <Mentor />
       <StatusBar style='auto' />
     </View>
   )
