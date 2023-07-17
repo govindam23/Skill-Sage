@@ -44,7 +44,7 @@ export default function CourseDetails() {
         <View>
             <Text style={{fontSize:20,
             fontWeight:'bold'}}>{course.name}</Text>
-            <Text style={{color:Colors.gray}}>by UofWindsor</Text>
+            <Text style={{color:Colors.gray}}>by Skill-Sage</Text>
             <Image source={{uri:course.image}} 
             style={{height:150,marginTop:10,borderRadius:10}} />
             <Text style={{marginTop:10,
