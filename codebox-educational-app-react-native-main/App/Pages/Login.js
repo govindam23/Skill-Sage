@@ -46,7 +46,8 @@ export default function Login() {
       }
   return (
     <View>
-        <Image source={require('./../Assets/Images/LOGIN.png') } />
+        <Image style={styles.image}
+         source={require('./../Assets/Images/LOGIN.png') } />
         <View style={styles.container}>
              <Text style={styles.welcomeText}>Welcome to Skill-Sage!</Text>
             <Text style={{textAlign:'center', marginTop:80,fontSize:20}}>Login/Signup</Text>
@@ -72,7 +73,11 @@ export default function Login() {
 
 const styles = StyleSheet.create({
 
-   
+   image:{
+    resizeMode:'stretch',
+     width:450,
+    height:450,
+   },
     container:{
         paddingTop:40,
         marginTop:-25,

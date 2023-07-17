@@ -1,9 +1,7 @@
 {
   "collectionName": "components_video_topics_video_topics",
   "info": {
-    "displayName": "VideoTopics",
-    "icon": "play",
-    "description": ""
+    "displayName": "videoTopics"
   },
   "options": {},
   "attributes": {
