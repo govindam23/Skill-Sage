@@ -3,6 +3,7 @@ import React, { useContext } from "react";
 import { Image, StyleSheet, Text, View } from "react-native";
 
 import { AuthContext } from "../Context/AuthContext";
+import Colors from '../Shared/Colors';
 
 import Colors from "../Shared/Colors";
 
@@ -12,13 +13,8 @@ export default function WelcomeHeader() {
   return (
     <View style={styles.container}>
       <View>
-        <Text style={{ color: Colors.black, fontSize: 15, fontWeight: "bold" }}>
-          Hey,
-        </Text>
-
-        <Text
-          style={{ color: Colors.darkBlue, fontSize: 20, fontWeight: "bold" }}
-        >
+        <Text style={{ color:Colors.black,fontSize:15, fontWeight: "bold" }}>Hey,</Text>
+        <Text style={{ color:Colors.darkBlue,fontSize: 20, fontWeight: "bold" }}>
           {userData?.name}
         </Text>
       </View>

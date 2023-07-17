@@ -64,60 +64,20 @@ export default function CourseList({ type }) {
       </Text>
 
       <FlatList
-        data={courseList}
-        horizontal={true}
-        showsHorizontalScrollIndicator={false}
-        renderItem={({ item }) => (
-          <TouchableOpacity
-            style={{
-              backgroundColor: Colors.black,
-              marginRight: 10,
-
-              borderRadius: 10,
-            }}
-            onPress={() => onPressCourse(item)}
-          >
-            <Image
-              source={{
-                uri: item.image,
-              }}
-              style={{
-                width: 200,
-                height: 105,
-
-                borderTopLeftRadius: 10,
-                borderTopRightRadius: 10,
-
-                resizeMode: "cover",
-              }}
-            />
-
-            <View
-              style={{
-                padding: 10,
-              }}
-            >
-              <Text
-                style={{
-                  color: Colors.white,
-                  fontWeight: "bold",
-                  fontSize: 15,
-                }}
-              >
-                {" "}
-                {item.name}{" "}
-              </Text>
-
-              <Text
-                style={{
-                  color: Colors.white,
-                  fontWeight: "300",
-                }}
-              >
-                {" "}
-                {item.Topic?.length}
-                Lessons{" "}
-              </Text>
+      data={courseList}
+      horizontal={true}
+      showsHorizontalScrollIndicator={false}
+      renderItem={({item})=>(
+        <TouchableOpacity style={{backgroundColor:Colors.black,marginRight:10,
+        borderRadius:10}} onPress={()=>onPressCourse(item)}>
+            <Image source={{uri:item.image}}  
+            style={{width:200,height:105,  
+            borderTopLeftRadius:10,borderTopRightRadius:10,
+            resizeMode:'cover'}} />
+            <View style={{padding:10}}>
+            <Text style={{color:Colors.white,fontWeight:'bold',fontSize:15}}>{item.name}</Text>
+            <Text style={{color:Colors.white,fontWeight:'300'}}>{item.Topic?.length} Lessons</Text>
+             
             </View>
           </TouchableOpacity>
         )}

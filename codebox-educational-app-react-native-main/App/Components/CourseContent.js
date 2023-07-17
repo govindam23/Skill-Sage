@@ -1,10 +1,8 @@
-import { View, Text } from 'react-native'
-import React, { useEffect } from 'react'
-import { FlatList } from 'react-native'
 import { Ionicons } from '@expo/vector-icons';
-import Colors from '../Shared/Colors';
-import { TouchableOpacity } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
+import React, { useEffect } from 'react';
+import { FlatList, Text, TouchableOpacity, View } from 'react-native';
+import Colors from '../Shared/Colors';
  
 export default function CourseContent({course,userProgress,courseType}) {
     const navigation=useNavigation();
