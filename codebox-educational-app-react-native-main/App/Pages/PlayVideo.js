@@ -1,7 +1,7 @@
-import { View, Text, TouchableOpacity } from 'react-native'
-import React, { useCallback, useEffect, useState } from 'react'
 import { Ionicons } from '@expo/vector-icons';
 import { useNavigation, useRoute } from '@react-navigation/native';
+import React, { useCallback, useEffect, useState } from 'react';
+import { Text, TouchableOpacity, View } from 'react-native';
 import YoutubePlayer from "react-native-youtube-iframe";
 export default function PlayVideo() {
     const navigation=useNavigation();

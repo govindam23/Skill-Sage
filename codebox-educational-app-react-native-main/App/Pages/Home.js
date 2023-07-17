@@ -1,6 +1,6 @@
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import React, { useContext } from 'react';
-import { Button, ScrollView, View } from 'react-native';
+import { Button, ScrollView, StyleSheet, View } from 'react-native';
 import CourseList from '../Components/CourseList';
 
 import SearchBar from '../Components/SearchBar';
@@ -19,15 +19,23 @@ const Logout=()=>{
   AsyncStorage.clear()
   setUserData(null);
 }
+
   
   return (
-    <ScrollView style={{padding:20}}>
-      <View style ={{fontFamily:''}}>
+    <ScrollView style={{padding:10}}>
+      <View style={styles.Slider}>
+      
         <WelcomeHeader/>
+        </View>
+        <View style={styles.WelcomeHeader}>
         <SearchBar/>
+        </View>
         <Slider/>
+        
         <VideoCourseList/>
-        <CourseList type={'basic'} />
+        <View style={styles.container}>
+        <CourseList  type={'basic'} />
+        </View>
         <CourseList type={'advance'} />
         
       
@@ -35,9 +43,22 @@ const Logout=()=>{
         <Button title="Logout" onPress={Logout} />
         </View>
         
-        </View>
+       
         
     </ScrollView> 
     
   )
 }
+const styles =StyleSheet.create({
+  container:{
+    paddingTop:20,
+    height:220,
+    alignItems:'center',
+  },
+  Slider:{
+    paddingTop:40,
+  },
+  WelcomeHeader:{
+    paddingBottom:15,
+  }
+})
