@@ -5,6 +5,7 @@ import { Dimensions, FlatList, Text, TouchableOpacity, View } from 'react-native
 import ProgressBar from '../Components/ProgressBar';
 import { AuthContext } from '../Context/AuthContext';
 import Colors from '../Shared/Colors';
+import GlobalApi from '../Shared/GlobalApi';
 
 
 export default function CourseChapter() {
