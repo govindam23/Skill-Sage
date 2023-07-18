@@ -1,29 +1,31 @@
 import React, { useEffect, useState } from 'react';
 import { Dimensions, FlatList, Image, View } from 'react-native';
-import GlobalApi from '../Shared/GlobalApi';
+import GlobalApi from '../Shared/GlobalApi';//Importing API file
 
 export default function Slider() {
     const [slider,setSlider]=useState([])
     useEffect(()=>{
+      //Fetching slider data on mount
         getSlider();
       },[])
-  
+      //API call to get slider data using async functions
       const getSlider=async()=>{
         const result=(await GlobalApi.getSlider()).data;
         
         
-       
+       //Map to parse needed data
         const resp=result.data.map((item)=>({
             id:item.id,
             name:item.attributes.name,
             image:item.attributes.image.data.attributes.url
         }))
-       
+       //Updating slider date
         setSlider(resp)
       }
   return (
     <View style={{marginTop:10}}>
       <FlatList
+        //FlatList to render slider items
         data={slider}
         horizontal={true}
         showsHorizontalScrollIndicator={false}

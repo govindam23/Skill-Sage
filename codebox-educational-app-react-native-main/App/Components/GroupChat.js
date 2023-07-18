@@ -14,7 +14,7 @@ const GroupChat = () => {
 
   useEffect(() => {
     // Scroll to the bottom of the chat when new messages are added
-    // You may need to adjust the "chatContainer" ref based on your layout structure
+    
     chatContainer.scrollToEnd({ animated: true });
   }, [messages]);
 
