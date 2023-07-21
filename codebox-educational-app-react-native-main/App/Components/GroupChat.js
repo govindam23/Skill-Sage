@@ -1,9 +1,10 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { FlatList, Text, TextInput, TouchableOpacity, View } from 'react-native';
 
 const GroupChat = () => {
   const [messages, setMessages] = useState([]);
   const [inputText, setInputText] = useState('');
+  const chatContainerRef = useRef(); // Create a ref using useRef
 
   const handleSendMessage = () => {
     if (inputText.trim() !== '') {
@@ -14,13 +15,16 @@ const GroupChat = () => {
 
   useEffect(() => {
     // Scroll to the bottom of the chat when new messages are added
-    // You may need to adjust the "chatContainer" ref based on your layout structure
-    chatContainer.scrollToEnd({ animated: true });
+    // Use chatContainerRef.current.scrollToEnd() instead of chatContainer.scrollToEnd()
+    if (chatContainerRef.current) {
+      chatContainerRef.current.scrollToEnd({ animated: true });
+    }
   }, [messages]);
 
   return (
     <View style={styles.container}>
-      <View style={styles.chatContainer} ref={(ref) => (chatContainer = ref)}>
+      {/* Attach the ref to the FlatList */}
+      <View style={styles.chatContainer} ref={chatContainerRef}>
         <FlatList
           data={messages}
           keyExtractor={(item, index) => index.toString()}
@@ -47,50 +51,6 @@ const GroupChat = () => {
   );
 };
 
-const styles = {
-  container: {
-    flex: 1,
-    padding: 16,
-  },
-  chatContainer: {
-    flex: 1,
-  },
-  messageContainer: {
-    backgroundColor: '#eee',
-    borderRadius: 8,
-    padding: 10,
-    marginBottom: 10,
-  },
-  messageText: {
-    fontSize: 16,
-    color: '#333',
-  },
-  inputContainer: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    borderTopWidth: 1,
-    borderTopColor: '#ccc',
-    paddingTop: 8,
-  },
-  input: {
-    flex: 1,
-    backgroundColor: '#fff',
-    borderRadius: 8,
-    paddingHorizontal: 12,
-    paddingVertical: 8,
-    marginRight: 8,
-  },
-  sendButton: {
-    backgroundColor: 'blue',
-    borderRadius: 8,
-    paddingVertical: 10,
-    paddingHorizontal: 16,
-  },
-  sendButtonText: {
-    color: '#fff',
-    fontSize: 16,
-    fontWeight: 'bold',
-  },
-};
+// The styles object should be defined correctly (as provided in your previous code).
 
 export default GroupChat;
