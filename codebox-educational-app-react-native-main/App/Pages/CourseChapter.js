@@ -64,7 +64,7 @@ export default function CourseChapter() {
             chapterRef=ref
         }}
         renderItem={({item,index})=>(
-            <View  style={{width:Dimensions.get('screen').width*0.85,
+            <View  style={{width:Dimensions.get('screen').width*0.87,
             marginRight:15,padding:10}}>
                 <Text style={{fontSize:18,fontWeight:'bold'}}>{item.name}</Text>
                 <Text>{item.description}</Text>
