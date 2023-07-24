@@ -5,14 +5,18 @@ import { Text, TouchableOpacity, View } from 'react-native';
 import YoutubePlayer from "react-native-youtube-iframe";
 export default function PlayVideo() {
     const navigation=useNavigation();
+    //route parameters is taken using useRoute hook
     const param=useRoute().params;
+     // State to hold the video chapter data
     const [videoChapter,setVideoChapter]=useState([])
+    // State to manage the video player's play state
     const [playing, setPlaying] = useState(false);
+    // useEffect hook to initialize the component and set the video chapter data
     useEffect(()=>{
         setVideoChapter(param.courseContent)
     },[])
    
-
+    // Function to handle the video player state change
   const onStateChange = useCallback((state) => {
     if (state === "ended") {
       setPlaying(false);

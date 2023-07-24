@@ -4,6 +4,7 @@ import { AuthContext } from "../Context/AuthContext";
 import Colors from '../Shared/Colors';
 
 export default function WelcomeHeader() {
+  // userData and setUserData is taken from the AuthContext using the useContext hook
   const { userData, setUserData } = useContext(AuthContext);
   return (
     <View style={styles.container}>

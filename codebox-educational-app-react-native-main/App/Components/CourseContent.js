@@ -5,16 +5,17 @@ import { FlatList, Text, TouchableOpacity, View } from 'react-native';
 import Colors from '../Shared/Colors';
  
 export default function CourseContent({course,userProgress,courseType}) {
-    const navigation=useNavigation();
-
+    // useNavigation hook is used to get the navigation object
+  const navigation=useNavigation();
+// useEffect hook is used to log the userProgress whenever it changes
     useEffect(()=>{
       console.log("userProgress",userProgress)
     })
-   
+   // Function to check if user made progress on a specific course content
     const checkUserProgress=(contentId)=>{
       return userProgress.find(item=>item.courseContentId==contentId)
     }
-    
+    // This function handles the pressing on chapter in hte course content
     const onChapterPress=(courseContent)=>{
       if(courseType=='text')
       {
@@ -44,8 +45,11 @@ export default function CourseContent({course,userProgress,courseType}) {
         flexDirection:'row',backgroundColor:Colors.white,marginBottom:5
         ,padding:13,alignItems:'center',borderRadius:5}}>
           
-        { checkUserProgress(item.id)?  <Ionicons name="checkmark-circle" size={24} color={Colors.green }
+        { checkUserProgress(item.id)?
+        // If the user has made progress on this content, display a checkmark icon
+        <Ionicons name="checkmark-circle" size={24} color={Colors.green }
          style={{marginRight:20}} />:
+         // If the user hasn't made progress on this content, display the index number
          <Text style={{fontWeight:'bold',fontSize:20,
          color:Colors.gray,marginRight:20}}>{index+1}</Text>}
             <Text style={{fontSize:15,fontWeight:'bold'}}>

@@ -7,16 +7,24 @@ import { AuthContext } from "../Context/AuthContext";
 import Colors from "../Shared/Colors";
 import GlobalApi from "../Shared/GlobalApi";
 export default function CourseDetails() {
+  // Get the route parameters using the useRoute hook from React Navigation
   const param = useRoute().params;
+  // State to hold the course data
   const [course, setCourse] = useState([]);
+  // Get the navigation object using the useNavigation hook from React Navigation
   const navigation = useNavigation();
+  // State to hold the user's course progress
   const [userProgress, setUserProgress] = useState([]);
+  // Get the userData and setUserData from the AuthContext using the useContext hook
   const { userData, setUserData } = useContext(AuthContext);
+  // useEffect hook to initialize the component and fetch the course progress
   useEffect(() => {
+   // Set the course data from the route params
     setCourse(param?.courseData);
+    // Check if courseData.id exists and fetch the course progress
     param.courseData.id ? getCourseProgress() : null;
   }, [param.courseContentId]);
-
+// Function to fetch the user's course progress from the AP
   const getCourseProgress = () => {
     GlobalApi.getCourseProgress(userData.id, param?.courseData.id).then(
       (resp) => {

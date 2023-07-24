@@ -10,20 +10,26 @@ import GlobalApi from '../Shared/GlobalApi';
 
 export default function CourseChapter() {
     const navigation=useNavigation();
+    // Get the route parameters using the useRoute hook from React Navigation
     const param=useRoute().params;
+    // State to hold the chapter data
     const [chapter,setChapter]=useState([])
+    // State to control the 'Run' button and show/hide the output
     const [run,setRun]=useState(false);
+    // State to track the progress of the course
     const [progress,setProgress]=useState(0);
     const {userData,setUserData}=useContext(AuthContext);
+    // Reference to the FlatList to enable scrolling to specific chapters
     let chapterRef;
-   
+    // useEffect hook to initialize the component and fetch the chapter data
     useEffect(()=>{
-      
+      // Reset the progress and set the chapter data from the route params
         setProgress(0);
         setChapter(param.courseContent.Content)
       
     },[])
     const onClickNext=(index)=>{
+        // Reset 'run' state and update progress
         setRun(false);
         setProgress(index+1/chapter.length)
         try{
@@ -39,8 +45,9 @@ export default function CourseChapter() {
                     courseContentId:param.courseContent.id
                 }
             }
-
+// Calling the API to update the course progress
             GlobalApi.setCourseProgress(data).then(resp=>{
+               // Navigates back to the 'course-detail' screen with the current course content ID
                 navigation.navigate({
                   name:'course-detail' ,
                   params:{courseContentId:param.courseContent.id},
@@ -65,7 +72,8 @@ export default function CourseChapter() {
             chapterRef=ref
         }}
         renderItem={({item,index})=>(
-            <View  style={{width:Dimensions.get('screen').width*0.85,
+            <View  style={{width:Dimensions.get('screen').width*0.87
+            ,
             marginRight:15,padding:10}}>
                 <Text style={{fontSize:18,fontWeight:'bold'}}>{item.name}</Text>
                 <Text>{item.description}</Text>
