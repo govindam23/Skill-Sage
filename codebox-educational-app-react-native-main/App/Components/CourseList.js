@@ -5,13 +5,15 @@ import Colors from '../Shared/Colors';
 import GlobalApi from '../Shared/GlobalApi';
 
 export default function CourseList({type}) { 
-    const [courseList,setCourseList]=useState([])
+    // State to hold the list of courses
+  const [courseList,setCourseList]=useState([])
     const navigation=useNavigation();
+    // useEffect hook to fetch the course list when the component mounts
     useEffect(()=>{
          
         getCourseList();
     },[])
-
+    // Function to fetch the course list from the API and update the state
     const getCourseList=async()=>{
         const resp=(await GlobalApi.getCourseList(type)).data;
         const result=resp.data.map((item)=>({
@@ -25,7 +27,7 @@ export default function CourseList({type}) {
        
         setCourseList(result); 
     }
-
+    // Function to handle pressing on a course item
     const onPressCourse=(course)=>{
         
         navigation.navigate('course-detail',{courseData:course,

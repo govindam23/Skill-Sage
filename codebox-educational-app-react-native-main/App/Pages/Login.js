@@ -7,16 +7,19 @@ import { AuthContext } from '../Context/AuthContext';
 import Colors from '../Shared/Colors';
 import Services from '../Shared/Services';
 export default function Login() {
+    // This Ensure that any existing AuthSession is completed before the component mounts
     WebBrowser.maybeCompleteAuthSession();
+    // State to store the access token and user information
     const [accessToken,setAccessToken]=useState();
     const [userInfo,setUserInfo]=useState();
     const {userData,setUserData}=useContext(AuthContext)
+    // Use the useAuthRequest hook from Expo to get the Google authentication request
     const [request, response, promptAsync] = Google.useAuthRequest({
         androidClientId: '944035589692-vevtc8642v1e92rrlbtuchb89snbbq84.apps.googleusercontent.com',
         expoClientId:'944035589692-hhdqjhkj28p76a12okf5d008bethkgj5.apps.googleusercontent.com'
        
       });
-
+      // useEffect hook to handle the response from the Google authentication
       useEffect(()=>{
         if(response?.type=='success')
         {
@@ -25,7 +28,7 @@ export default function Login() {
             getUserData();
         }
       },[response]);
-
+// Function to fetch user data from Google after successful authentication
       const getUserData=async()=>{
         try {
             const resp = await fetch(
@@ -47,7 +50,7 @@ export default function Login() {
   return (
     <View>
         <Image style={styles.image}
-         source={require('./../Assets/Images/LOGIN.png') } />
+         source={require('./../Assets/Images/Login1.png') } />
         <View style={styles.container}>
              <Text style={styles.welcomeText}>Welcome to Skill-Sage!</Text>
             <Text style={{textAlign:'center', marginTop:80,fontSize:20}}>Login/Signup</Text>
@@ -63,7 +66,7 @@ export default function Login() {
               email:'rajdeep@gmail.com',
               id:1
            })}>
-            <Text>Skip</Text>
+            {/* <Text>Skip</Text> */}
             </TouchableOpacity>
         
         </View>
@@ -74,9 +77,8 @@ export default function Login() {
 const styles = StyleSheet.create({
 
    image:{
-    resizeMode:'stretch',
-     width:450,
-    height:450,
+    width:430,
+    height:600,
    },
     container:{
         paddingTop:40,

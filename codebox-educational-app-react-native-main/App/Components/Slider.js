@@ -3,16 +3,18 @@ import { Dimensions, FlatList, Image, View } from 'react-native';
 import GlobalApi from '../Shared/GlobalApi';
 
 export default function Slider() {
+  // State to hold the slider data
     const [slider,setSlider]=useState([])
+    // useEffect hook to fetch the slider data when the component mounts
     useEffect(()=>{
         getSlider();
       },[])
-  
+      // Function to fetch the slider data from the API and update the state
       const getSlider=async()=>{
         const result=(await GlobalApi.getSlider()).data;
         
         
-       
+       // necessary data is extracted from the API response
         const resp=result.data.map((item)=>({
             id:item.id,
             name:item.attributes.name,

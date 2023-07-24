@@ -10,8 +10,9 @@ import { AuthContext } from "../Context/AuthContext";
 
 export default function Home() {
   const { userData, setUserData } = useContext(AuthContext);
-
+// Function to handle user logout
   const Logout = () => {
+    // Clear the user data from AsyncStorage and setUserData to null
     AsyncStorage.clear();
     setUserData(null);
   };

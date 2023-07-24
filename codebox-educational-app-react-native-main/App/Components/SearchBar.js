@@ -1,10 +1,10 @@
-import { View, Text, StyleSheet } from 'react-native'
-import React from 'react'
 import { Ionicons } from '@expo/vector-icons';
+import React from 'react';
+import { StyleSheet, TextInput, View } from 'react-native';
 import Colors from '../Shared/Colors';
-import { TextInput } from 'react-native';
 export default function SearchBar() {
   return (
+    // View containing the search bar component
     <View style={styles.container}>
         <Ionicons name="search" size={24} 
         color={Colors.gray} style={{marginRight:10}} /> 
